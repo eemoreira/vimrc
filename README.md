@@ -7,9 +7,10 @@ My personal (neo)vim configuration files.
 
 To install plugins, I use [vim-packer](https://github.com/wbthomason/packer.nvim).
 
-To install the plugins, go to *lua/src/packer.lua* and run:
+To install any additional plugins, add them to *packer.lua* file and run:
 
 ```vim
+:so
 :PackerSync
 ```
 
