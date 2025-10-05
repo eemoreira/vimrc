@@ -1,6 +1,4 @@
 require("src.packer")
 require("src.colors")
 require("src.options")
-require("src.lsp")
 require("src.functions")
-require("src.tree")
