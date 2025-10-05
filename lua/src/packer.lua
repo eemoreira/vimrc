@@ -17,7 +17,6 @@ return require('packer').startup(function(use)
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
-	use("neovim/nvim-lspconfig")
 
     use("Shatur/neovim-ayu")
 
@@ -36,13 +35,6 @@ return require('packer').startup(function(use)
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
-    })
-
-    use({"iamcco/markdown-preview.nvim", run = "cd app && npm install",
-        setup = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-        end,
-        ft = { "markdown" },
     })
 
     use("chomosuke/typst-preview.nvim")

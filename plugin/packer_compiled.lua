@@ -99,11 +99,6 @@ _G.packer_plugins = {
     path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/neovim-ayu",
     url = "https://github.com/Shatur/neovim-ayu"
   },
-  ["nvim-lspconfig"] = {
-    loaded = true,
-    path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
-    url = "https://github.com/neovim/nvim-lspconfig"
-  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
