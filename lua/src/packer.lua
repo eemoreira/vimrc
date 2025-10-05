@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
 		},
 	}
     use("github/copilot.vim")
+    use("mason-org/mason.nvim")
 
 
 end)

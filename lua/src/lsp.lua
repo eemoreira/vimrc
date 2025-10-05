@@ -1,5 +1,5 @@
-vim.lsp.enable({ "lua_ls", "clangd" })
-vim.lsp.config("lus_ls", {
+vim.lsp.enable({ "lua_ls", "clangd", "clang-format"})
+vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
             workspace = {
