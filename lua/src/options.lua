@@ -14,7 +14,7 @@ vim.o.undofile = true
 vim.o.guicursor = "n-v-c-i-c:block-Cursor"
 vim.o.winborder = "rounded"
 vim.g.mapleader = " "
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
 vim.keymap.set({"n", "v", "x"}, "<leader>y", '"+y<CR>')
 vim.keymap.set({"n", "v", "x"}, "<leader>d", '"+d<CR>')
