@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
-  ["lua-language-server"] = {
-    loaded = true,
-    path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/lua-language-server",
-    url = "https://github.com/LuaLS/lua-language-server"
-  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/mason.nvim",
