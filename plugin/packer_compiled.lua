@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/mason.nvim",
@@ -128,6 +133,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["typst-preview.nvim"] = {
+    loaded = true,
+    path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/typst-preview.nvim",
+    url = "https://github.com/chomosuke/typst-preview.nvim"
   }
 }
 

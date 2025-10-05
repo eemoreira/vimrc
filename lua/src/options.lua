@@ -21,5 +21,4 @@ local map = vim.keymap.set
 map({"n", "v", "x"}, "<leader>y", '"+y<CR>')
 map({"n", "v", "x"}, "<leader>d", '"+d<CR>')
 map("i", "<C-n>", "<C-x><C-o>")
-
-
+map("n", "<leader>lf", vim.lsp.buf.format)
