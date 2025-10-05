@@ -1,4 +1,4 @@
-vim.lsp.enable({ "lua_ls", "clangd", "clang-format"})
+vim.lsp.enable({ "lua_ls", "clangd", "clang-format", "prettier" })
 vim.lsp.config("lua_ls", {
     settings = {
         Lua = {

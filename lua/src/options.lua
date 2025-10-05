@@ -16,5 +16,10 @@ vim.o.winborder = "rounded"
 vim.g.mapleader = " "
 vim.o.termguicolors = true
 
-vim.keymap.set({"n", "v", "x"}, "<leader>y", '"+y<CR>')
-vim.keymap.set({"n", "v", "x"}, "<leader>d", '"+d<CR>')
+local map = vim.keymap.set
+
+map({"n", "v", "x"}, "<leader>y", '"+y<CR>')
+map({"n", "v", "x"}, "<leader>d", '"+d<CR>')
+map("i", "<C-n>", "<C-x><C-o>")
+
+
