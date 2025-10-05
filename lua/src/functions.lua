@@ -5,6 +5,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     local last_pos = vim.fn.line([['"]])
     if last_pos > 0 and last_pos <= vim.fn.line("$") then
       vim.cmd('normal! g`"')
+      vim.cmd('normal! zz')
     end
   end,
 })
@@ -16,7 +17,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		if client:supports_method("textDocument/completion") then
 			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
 		end
-        vim.cmd('normal! zz')
 	end,
 })
 vim.cmd("set completeopt+=noselect")
