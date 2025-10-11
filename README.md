@@ -14,6 +14,7 @@ To install any additional plugins, add them to *packer.lua* file and run:
 :PackerSync
 ```
 
+
 ## LSP
 To mangage LSP servers, I use [mason.nvim](https://github.com/mason-org/mason.nvim).
 
