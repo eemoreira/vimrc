@@ -10,3 +10,12 @@ vim.lsp.config("lua_ls", {
         },
     },
 })
+
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = "●",
+    },
+    float = {
+        source = true,
+    },
+})
