@@ -40,6 +40,7 @@ local function floating_terminal()
         state.floating = get_floating_window({buf = state.floating.buf})
         if vim.bo[state.floating.buf].buftype ~= 'terminal' then
             vim.cmd.terminal()
+            vim.cmd.startinsert()
         end
     else
         vim.api.nvim_win_hide(state.floating.win)
