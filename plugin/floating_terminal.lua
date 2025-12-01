@@ -37,17 +37,16 @@ end
 
 local function floating_terminal()
     if not vim.api.nvim_win_is_valid(state.floating.win) then
-        state.floating = get_floating_window({buf = state.floating.buf})
+        state.floating = get_floating_window({ buf = state.floating.buf })
         if vim.bo[state.floating.buf].buftype ~= 'terminal' then
             vim.cmd.terminal()
-            vim.cmd.startinsert()
         end
+        vim.cmd.startinsert()
     else
         vim.api.nvim_win_hide(state.floating.win)
     end
 end
 
 vim.api.nvim_create_user_command("FloatingTerminal", floating_terminal, {})
-vim.keymap.set({"n", "t"}, "<leader>tt", floating_terminal)
+vim.keymap.set({ "n", "t" }, "<leader>tt", floating_terminal)
 vim.keymap.set("t", "<C-w>n", "<C-\\><C-n>")
-
