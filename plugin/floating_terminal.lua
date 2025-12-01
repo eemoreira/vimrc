@@ -48,5 +48,6 @@ local function floating_terminal()
 end
 
 vim.api.nvim_create_user_command("FloatingTerminal", floating_terminal, {})
-vim.keymap.set({ "n", "t" }, "<leader>tt", floating_terminal)
+vim.keymap.set("n", "<leader>tt", floating_terminal)
+vim.keymap.set("t", "<C-d>", floating_terminal)
 vim.keymap.set("t", "<C-w>n", "<C-\\><C-n>")
