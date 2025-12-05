@@ -1,8 +1,8 @@
 vim.o.number = true
 vim.o.wrap = false
 
-vim.o.ts = 4
-vim.o.sw = 4
+vim.o.ts = 2
+vim.o.sw = 2
 vim.o.so = 10
 vim.o.et = true
 vim.o.ai = true
@@ -18,8 +18,8 @@ vim.o.termguicolors = true
 
 local map = vim.keymap.set
 
-map({"n", "v", "x"}, "<leader>y", '"+y<CR>')
-map({"n", "v", "x"}, "<leader>d", '"+d<CR>')
+map({ "n", "v", "x" }, "<leader>y", '"+y<CR>')
+map({ "n", "v", "x" }, "<leader>d", '"+d<CR>')
 map("i", "<C-n>", "<C-x><C-o>")
 map("n", "<leader>lf", vim.lsp.buf.format)
 map("n", "<leader>cpd", "<cmd>Copilot disable<CR>")

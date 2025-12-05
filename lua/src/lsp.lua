@@ -1,5 +1,7 @@
 vim.lsp.enable({ "lua_ls", "clangd", "basedpyright", "marksman", "tinymist", "gopls", "ts_ls",
-    "docker_compose_language_service", "docker_language_server", "phpactor", "vscode-json-language-server" })
+    "docker_compose_language_service", "docker_language_server",
+    "phpactor", "vscode-json-language-server", "jdtls", "kotlin_language_server",
+})
 
 vim.lsp.config("lua_ls", {
     settings = {
@@ -19,3 +21,4 @@ vim.diagnostic.config({
         source = true,
     },
 })
+
