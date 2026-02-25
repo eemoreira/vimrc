@@ -1,53 +1,60 @@
 local state = {
-    floating = {
-        buf = -1,
-        win = -1,
-    }
+  floating = {
+    buf = -1,
+    win = -1,
+  }
 }
 
 local function get_floating_window(opts)
-    opts = opts or {}
+  opts = opts or {}
 
-    local width = math.floor(vim.o.columns * 0.8)
-    local height = math.floor(vim.o.lines * 0.8)
+  local width = math.floor(vim.o.columns * 0.8)
+  local height = math.floor(vim.o.lines * 0.8)
 
-    local row = math.floor((vim.o.lines - height) / 2 - 1)
-    local col = math.floor((vim.o.columns - width) / 2)
+  local row = math.floor((vim.o.lines - height) / 2 - 1)
+  local col = math.floor((vim.o.columns - width) / 2)
 
-    local config = {
-        relative = 'editor',
-        width = width,
-        height = height,
-        row = row,
-        col = col,
-        style = 'minimal',
-        border = 'rounded',
-    }
+  local config = {
+    relative = 'editor',
+    width = width,
+    height = height,
+    row = row,
+    col = col,
+    style = 'minimal',
+    border = 'rounded',
+  }
 
-    local buf = nil
-    if vim.api.nvim_buf_is_valid(opts.buf) then
-        buf = opts.buf
-    else
-        buf = vim.api.nvim_create_buf(false, true)
-    end
+  local buf = nil
+  if vim.api.nvim_buf_is_valid(opts.buf) then
+    buf = opts.buf
+  else
+    buf = vim.api.nvim_create_buf(false, true)
+  end
 
-    local win = vim.api.nvim_open_win(buf, true, config)
-    return { buf = buf, win = win }
+  local win = vim.api.nvim_open_win(buf, true, config)
+  return { buf = buf, win = win }
 end
 
 local function floating_terminal()
-    if not vim.api.nvim_win_is_valid(state.floating.win) then
-        state.floating = get_floating_window({ buf = state.floating.buf })
-        if vim.bo[state.floating.buf].buftype ~= 'terminal' then
-            vim.cmd.terminal()
-        end
-        vim.cmd.startinsert()
-    else
-        vim.api.nvim_win_hide(state.floating.win)
+  if not vim.api.nvim_win_is_valid(state.floating.win) then
+    state.floating = get_floating_window({ buf = state.floating.buf })
+    if vim.bo[state.floating.buf].buftype ~= 'terminal' then
+      vim.cmd.terminal()
     end
+    vim.cmd.startinsert()
+  else
+    vim.api.nvim_win_hide(state.floating.win)
+  end
+end
+
+local function send_compile_command()
+  floating_terminal()
+  local job_id = vim.bo.channel
+  vim.api.nvim_chan_send(job_id, "cmake --build build && $(pwd)/build/app/app\r\n")
 end
 
 vim.api.nvim_create_user_command("FloatingTerminal", floating_terminal, {})
 vim.keymap.set("n", "<leader>tt", floating_terminal)
 vim.keymap.set("t", "<C-d>", floating_terminal)
 vim.keymap.set("t", "<C-w>n", "<C-\\><C-n>")
+vim.keymap.set("n", "<leader>cc", send_compile_command)

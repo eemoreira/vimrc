@@ -74,10 +74,20 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["actions-preview.nvim"] = {
+    loaded = true,
+    path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/actions-preview.nvim",
+    url = "https://github.com/aznhe21/actions-preview.nvim"
+  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
+  },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gruvbox.nvim"] = {
     loaded = true,
@@ -98,6 +108,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/neovim-ayu",
     url = "https://github.com/Shatur/neovim-ayu"
+  },
+  nvim = {
+    loaded = true,
+    path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
   },
   ["nvim-tree.lua"] = {
     loaded = true,

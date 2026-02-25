@@ -1,31 +1,31 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
-	use("wbthomason/packer.nvim")
+    -- Packer can manage itself
+    use("wbthomason/packer.nvim")
 
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.8',
-		-- or                            , branch = '0.1.x',
-		requires = { { 'nvim-lua/plenary.nvim' } }
-	}
-
-	use("ellisonleao/gruvbox.nvim")
-
-	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
 
+    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+
+    -- colorschemes
+    use("ellisonleao/gruvbox.nvim")
     use("Shatur/neovim-ayu")
+    use("catppuccin/nvim")
+    use("projekt0n/github-nvim-theme")
 
-	use {
-		'nvim-tree/nvim-tree.lua',
-		requires = {
-			'nvim-tree/nvim-web-devicons', -- optional
-		},
-	}
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
+    }
 
     use("github/copilot.vim")
 
@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
-    use("chomosuke/typst-preview.nvim")
+    use("aznhe21/actions-preview.nvim")
 
+    use("chomosuke/typst-preview.nvim")
 end)
