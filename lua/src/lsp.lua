@@ -1,6 +1,5 @@
-vim.lsp.enable({ "lua_ls", "rust_analyzer", "clangd", "basedpyright", "marksman", "tinymist", "gopls", "ts_ls",
-    "docker_compose_language_service", "docker_language_server",
-    "phpactor", "vscode-json-language-server", "jdtls", "kotlin_language_server",
+vim.lsp.enable({ "lua_ls", "rust_analyzer", "clangd", "pyright", "tinymist", "gopls", "kotlin_language_server",
+    "r_language_server"
 })
 
 vim.lsp.buf.hover({

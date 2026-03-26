@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
     use("ellisonleao/gruvbox.nvim")
     use("Shatur/neovim-ayu")
     use("catppuccin/nvim")
+    use("rebelot/kanagawa.nvim")
     use("projekt0n/github-nvim-theme")
 
     use {

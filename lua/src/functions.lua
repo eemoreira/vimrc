@@ -18,14 +18,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
             if client:supports_method("textDocument/completion") then
                 vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
             end
+            if client.name == "r_language_server" then
+                vim.diagnostic.enable(false, { bufnr = ev.buf})
+            end
         end
     end,
 })
+
 vim.cmd("set completeopt+=noselect")
 
 -- format on save
 vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = { "*.rs", "*.lua", "*.go", "*.js", "*.ts", "*.jsx", "*.tsx", "*.json", "*.css", "*.scss", "*.html", "*.md", "*.py" },
+    pattern = { "*.rs", "*.lua", "*.go" },
     callback = function()
         vim.lsp.buf.format()
     end,
