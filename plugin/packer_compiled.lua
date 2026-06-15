@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
   ["markdown-preview.nvim"] = {
     loaded = true,
     path = "/home/eduardo.moreira/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",

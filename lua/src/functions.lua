@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
             end
             if client.name == "r_language_server" then
-                vim.diagnostic.enable(false, { bufnr = ev.buf})
+                vim.diagnostic.enable(false, { bufnr = ev.buf })
             end
         end
     end,
@@ -32,5 +32,13 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = { "*.rs", "*.lua", "*.go" },
     callback = function()
         vim.lsp.buf.format()
+    end,
+})
+
+-- typst save to pdf on save
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = { "*.typ" },
+    callback = function()
+        vim.cmd("TinymistExportPdf")
     end,
 })
