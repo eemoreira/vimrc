@@ -30,8 +30,14 @@ local function create_tinymist_command(command_name, client, bufnr)
       if err then
         return vim.notify(err.code .. ': ' .. err.message, vim.log.levels.ERROR)
       end
+      local msg
+      if type(res) == 'string' then
+        msg = res
+      else
+        msg = vim.inspect(res)
+      end
       -- If exporting, show the string result; else, show the table for inspection
-      vim.notify(export_type and res or vim.inspect(res), vim.log.levels.INFO)
+      vim.notify(export_type and msg, vim.log.levels.INFO)
     end
     return client:exec_cmd({
       title = title_str,

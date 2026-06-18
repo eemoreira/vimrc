@@ -15,6 +15,7 @@ vim.o.guicursor = "n-v-c-i-c:block-Cursor"
 vim.o.winborder = "rounded"
 vim.g.mapleader = " "
 vim.o.termguicolors = true
+vim.o.clipboard = "unnamedplus"
 
 local map = vim.keymap.set
 
