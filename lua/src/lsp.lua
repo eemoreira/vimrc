@@ -1,4 +1,4 @@
-vim.lsp.enable({ "lua_ls", "rust_analyzer", "clangd", "pyright", "tinymist", "gopls", "kotlin_language_server",
+vim.lsp.enable({ "lua_ls", "rust_analyzer", "clangd", "basedpyright", "tinymist", "gopls", "kotlin_language_server",
     "r_language_server"
 })
 
