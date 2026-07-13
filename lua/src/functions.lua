@@ -48,3 +48,18 @@ vim.api.nvim_create_autocmd("BufWritePost", {
         vim.cmd("TinymistExportPdf")
     end,
 })
+
+
+-- create a cursorline only in the active window
+vim.api.nvim_create_autocmd("WinEnter", {
+    callback = function()
+        vim.wo.cursorline = true
+    end,
+})
+
+-- remove the cursorline when leaving the window
+vim.api.nvim_create_autocmd("WinLeave", {
+    callback = function()
+        vim.wo.cursorline = false
+    end,
+})
