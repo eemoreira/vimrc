@@ -46,4 +46,6 @@ return require('packer').startup(function(use)
     use("aznhe21/actions-preview.nvim")
 
     use("chomosuke/typst-preview.nvim")
+
+    use("xiyaowong/transparent.nvim")
 end)
