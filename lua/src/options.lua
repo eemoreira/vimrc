@@ -17,6 +17,10 @@ vim.g.mapleader = " "
 vim.o.termguicolors = true
 vim.o.clipboard = "unnamedplus"
 
+vim.api.nvim_set_hl(0, "CursorLine", {
+    underline = true,
+})
+
 local map = vim.keymap.set
 
 
